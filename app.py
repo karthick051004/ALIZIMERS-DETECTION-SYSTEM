@@ -373,4 +373,4 @@ elif choice == 'Prediction':
         
 # ============================================================================================
 elif choice == "About Us":
-    st.info("CREATED BY *****")
+    st.info("CREATED BY Karthick")
