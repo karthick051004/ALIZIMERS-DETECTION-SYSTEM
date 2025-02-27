@@ -344,29 +344,31 @@ elif choice == 'Prediction':
     mmse = regressor.predict([[nWBV, eTIV, SES]])  # for mmse
     print(mmse)
     print(nWBV, eTIV, SES)
-    if mmse > 26.77:
-        st.success('Your Result : You dont have Alizimers', icon="✅")
-        st.balloons()
-        re = "Non Dementiated"
-    else:
-        re = "Dementiated"
-        st.warning('Your Result : You have Alizimers', icon="⚠️")
-        from plyer import notification
-        import time
-
-        # Define the notification message and icon
-        title = 'Warning'
-        message = 'Your Result : You have Alizimers'
-        # Show the notification with the animated icon
-        notification.notify(
-            title=title,
-            message=message,
-            timeout=5,
-            toast=True
-        )
-        # Keep the notification displayed for 5 seconds
-        for i in range(5):
-            time.sleep(1)
+    sv=st.button("Predict")
+    if sv:
+        if mmse > 26.77:
+            st.success('Your Result : You dont have Alizimers', icon="✅")
+            st.balloons()
+            re = "Non Dementiated"
+        else:
+            re = "Dementiated"
+            st.warning('Your Result : You have Alizimers', icon="⚠️")
+            from plyer import notification
+            import time
+    
+            # Define the notification message and icon
+            title = 'Warning'
+            message = 'Your Result : You have Alizimers'
+            # Show the notification with the animated icon
+            notification.notify(
+                title=title,
+                message=message,
+                timeout=5,
+                toast=True
+            )
+            # Keep the notification displayed for 5 seconds
+            for i in range(5):
+                time.sleep(1)
     
         
 # ============================================================================================
